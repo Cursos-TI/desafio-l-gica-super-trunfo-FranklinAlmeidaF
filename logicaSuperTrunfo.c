@@ -1,43 +1,85 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+typedef struct {
+    char estado[10];
+    char codigo[4];
+    char nomeCidade[50];
+    int populacao;
+    float area;
+    float pib;
+    int pontosTuristicos;
+} supertrunfo;
 
-int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+int main() { 
+    supertrunfo carta1, carta2;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Primeira carta
+    printf("Informações da Carta 1:\n");
+    printf("Digite o nome do Estado: ");
+    scanf("%s", carta1.estado); 
+    printf("Digite o código da carta: ");
+    scanf("%s", carta1.codigo); 
+    printf("Digite o nome da Cidade: ");
+    scanf("%s", carta1.nomeCidade);
+    printf("Digite a quantidade da população: ");
+    scanf("%d", &carta1.populacao);
+    printf("Digite a área em Km² da cidade: ");
+    scanf("%f", &carta1.area);
+    printf("Digite o PIB em R$: ");
+    scanf("%f", &carta1.pib);
+    printf("Digite quantos pontos turísticos: ");
+    scanf("%d", &carta1.pontosTuristicos);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    // Segunda carta
+    printf("\nInformações da Carta 2:\n");
+    printf("Digite o nome do Estado: ");
+    scanf("%s", carta2.estado);
+    printf("Digite o código da carta: ");
+    scanf("%s", carta2.codigo);
+    printf("Digite o nome da Cidade: ");
+    scanf("%s", carta2.nomeCidade);
+    printf("Digite a quantidade da população: ");
+    scanf("%d", &carta2.populacao);
+    printf("Digite a área em Km² da cidade: ");
+    scanf("%f", &carta2.area);
+    printf("Digite o PIB em R$: ");
+    scanf("%f", &carta2.pib);
+    printf("Digite quantos pontos turísticos: ");
+    scanf("%d", &carta2.pontosTuristicos);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("\nComparação entre as cartas:\n");
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    if (carta1.populacao > carta2.populacao) {
+        printf("%s vence com maior população!\n", carta1.nomeCidade);
+    } else if (carta1.populacao < carta2.populacao) {
+        printf("%s vence com maior população!\n", carta2.nomeCidade);
+    } else {
+        printf("Empate na população!\n");
+    }
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    if (carta1.area > carta2.area) {
+        printf("%s vence com maior área!\n", carta1.nomeCidade);
+    } else if (carta1.area < carta2.area) {
+        printf("%s vence com maior área!\n", carta2.nomeCidade);
+    } else {
+        printf("Empate na área!\n");
+    }
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    if (carta1.pib > carta2.pib) {
+        printf("%s vence com maior PIB!\n", carta1.nomeCidade);
+    } else if (carta1.pib < carta2.pib) {
+        printf("%s vence com maior PIB!\n", carta2.nomeCidade);
+    } else {
+        printf("Empate no PIB!\n");
+    }
+
+    if (carta1.pontosTuristicos > carta2.pontosTuristicos) {
+        printf("%s vence com maior número de pontos turísticos!\n", carta1.nomeCidade);
+    } else if (carta1.pontosTuristicos < carta2.pontosTuristicos) {
+        printf("%s vence com maior número de pontos turísticos!\n", carta2.nomeCidade);
+    } else {
+        printf("Empate nos pontos turísticos!\n");
+    }
 
     return 0;
 }
